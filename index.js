@@ -19,13 +19,13 @@ const server = new ApolloServer({
     
 })
 
-const PORT = process.env.PORT || 4000
+
 
 
 mongoose
 .connect('mongodb+srv://' + encodeURIComponent(`${username}:${password}`) +`@cluster0.btjvx.mongodb.net/${dbName}?retryWrites=true&w=majority`)
   .then(() => {
-    return server.listen({port:PORT})
+    return server.listen({port: process.env.PORT})
     .then(res =>{
      console.log(`server is running at ${res.url}`);
     })
