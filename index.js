@@ -25,7 +25,7 @@ const server = new ApolloServer({
 mongoose
 .connect('mongodb+srv://' + encodeURIComponent(`${username}:${password}`) +`@cluster0.btjvx.mongodb.net/${dbName}?retryWrites=true&w=majority`)
   .then(() => {
-    return server.listen({port: process.env.PORT})
+    return server.listen({port: process.env.PORT || 4000})
     .then(res =>{
      console.log(`server is running at ${res.url}`);
     })
