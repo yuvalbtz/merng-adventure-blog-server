@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 const {username, dbName, password} = require("./credentials.json")
 
 const typeDefs = require("./graphql/typeDefs")
-const resolvers = require("./graphql/resolvers")
+const resolvers = require("./graphql/resolvers/index")
 
 
 
