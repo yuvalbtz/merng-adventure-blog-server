@@ -13,6 +13,7 @@ module.exports = gql`
      likeCount:Int!
      commentCount:Int!
      imagePost:String
+     
     }
 
 type Comment{
@@ -53,6 +54,7 @@ type User{
     register(registerInput:RegisterInput):User!
     login(username:String!, password:String!):User!
     createPost(title:String!, body:String!, imagePost:String!):Post!      
+    updatePost(postId:ID!,title:String!, body:String!, imagePost:String!):Post! 
     deletePost(postId:ID!):String!
     createComment(postId:ID!, body:String!):Post!
     deleteComment(postId:ID!, commentId:ID!):Post!

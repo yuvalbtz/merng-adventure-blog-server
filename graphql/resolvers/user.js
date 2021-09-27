@@ -42,7 +42,8 @@ module.exports = {
                 username,
                 email,
                 password,
-                confirmPassword},
+                confirmPassword
+            },
             
           
         },context,info){
@@ -51,6 +52,7 @@ module.exports = {
         if(!valid){
             throw new UserInputError('Errors',{errors});
         }   
+        
         const user = await User.findOne({username})
            if(user){
              throw new UserInputError("User name is already taken",{
