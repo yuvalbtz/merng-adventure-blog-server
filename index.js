@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 4000
 
 
 mongoose
-.connect('mongodb+srv://' + encodeURIComponent(`${username}:${password}`) +`@cluster0.btjvx.mongodb.net/${dbName}?retryWrites=true&w=majority`,{useNewUrlParser: true})
+.connect('mongodb+srv://' + encodeURIComponent(`${username}:${password}`) +`@cluster0.btjvx.mongodb.net/${dbName}?retryWrites=true&w=majority`)
   .then(() => {
     return server.listen({port:PORT})
     .then(res =>{
