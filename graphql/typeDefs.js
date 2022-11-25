@@ -1,8 +1,8 @@
 const gql = require("graphql-tag");
 
-
 module.exports = gql`
- type Post{
+
+type Post{
      id:ID!
      body:String!
      title:String!
