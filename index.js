@@ -1,11 +1,8 @@
 const {ApolloServer} = require("apollo-server")
 const mongoose = require("mongoose")
-
-const {username, dbName, password} = require("./credentials.json")
-
 const typeDefs = require("./graphql/typeDefs")
 const resolvers = require("./graphql/resolvers")
-
+require("dotenv");
 
 const server = new ApolloServer({
     typeDefs,
@@ -18,7 +15,7 @@ const PORT = process.env.PORT || 4000
 
 
 mongoose
-.connect('mongodb+srv://' + encodeURIComponent(`${username}:${password}`) +`@cluster0.btjvx.mongodb.net/${dbName}?retryWrites=true&w=majority`)
+.connect('mongodb+srv://' + encodeURIComponent(`${process.env.USERNAME}:${process.env.PASS}`) +`@cluster0.btjvx.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`)
   .then(() => {
     return server.listen({port:PORT})
     .then(res =>{
