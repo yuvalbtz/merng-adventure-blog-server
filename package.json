@@ -18,5 +18,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.9"
   },
-  "homepage": "https://adventure-blog-app.netlify.app/"
+  "engines": {
+    "node": ">=14 <15"
+  }
+  
 }
